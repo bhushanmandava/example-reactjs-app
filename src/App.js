@@ -12,7 +12,7 @@ function App() {
   const base_url = process.env.REACT_APP_NODE_ENV === 'development' ? process.env.REACT_APP_LOCAL_BASE_URL : process.env.REACT_APP_SERVER_BASE_URL;
 
   useEffect(() => {
-   axios.get(`${base_url}/getUsers`).then(res => { setRecordData(res.data) }).catch(err => alert(`Some error occured ==>${err}`));
+    axios.get(`${base_url}/getUsers`).then(res => { setRecordData(res.data) }).catch(err => alert(`Some error occured ==>${err}`));
   }, []);
 
   const handleChange = (event) => {
@@ -28,9 +28,9 @@ function App() {
   return (
     <div className="App">
       <nav className="navbar navbar-light bg-light mb-2">
-        <a class="navbar-brand" href="https://www.youtube.com/@IntegrationNinjas">
+        <a class="navbar-brand" href="https://www.youtube.com">
           <img src="./logo_p.png" width="50" height="50" class="d-inline-block" alt="" />
-          Integration Ninja
+          bhushan Mandava
         </a>
       </nav>
       <div className='container'>
@@ -38,7 +38,7 @@ function App() {
           <div className="col">
             <h3 className="text-center">Users List</h3>
             <ul>
-              {recordData.map((r, i) => <tl key={i}><DetailsCardComponent email={r.email} sn={i+1} userN={r.name} /></tl>)}
+              {recordData.map((r, i) => <tl key={i}><DetailsCardComponent email={r.email} sn={i + 1} userN={r.name} /></tl>)}
             </ul>
           </div>
           <div className="col">
